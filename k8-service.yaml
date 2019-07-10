@@ -30,6 +30,6 @@ metadata:
 spec:
   type: NodePort
   selector:
-          task:nginx
+    task:"nginx"
   ports:
     - port: 81 
