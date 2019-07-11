@@ -8,11 +8,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      task: two
+      app: k8-service
   template:
     metadata:
       labels:
-        task: two
+        app: k8-service
     spec:
       containers:
       - name: nginx
@@ -26,11 +26,10 @@ kind: Service
 metadata:
   name: k8-service
   labels:
-    name: k8-service
+    app: k8-service
 spec:
   type: NodePort
   selector:
-   labels:
      app: k8-service
   ports:
     - port: 80 
